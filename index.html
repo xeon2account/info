@@ -91,16 +91,18 @@
       background: #3a3a3c;
       border: none;
       color: #ffdb70;
-      padding: 6px 12px;
+      padding: 8px;
       border-radius: 8px;
       cursor: pointer;
       font-family: 'Poppins', sans-serif;
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 500;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
       transition: 0.3s;
+      width: 36px;
+      height: 36px;
     }
 
     .info_more-btn:hover {
@@ -109,10 +111,13 @@
     }
 
     .info_more-btn span.down {
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transform: rotate(0deg);
-      font-size: 16px;
+      font-size: 14px;
       transition: transform 0.3s;
+      line-height: 1;
     }
 
     .sidebar.active .info_more-btn span.down {
@@ -718,7 +723,7 @@
         </div>
 
         <button class="info_more-btn" data-sidebar-btn onclick="document.getElementById('sidebar').classList.toggle('active')">
-          <span class="down">v</span>
+          <span class="down">V</span>
         </button>
       </div>
 
