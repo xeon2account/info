@@ -30,65 +30,103 @@
     }
 
     .sidebar {
-      background: #2b2b2c;
+      background: #1e1e1f;
+      border: 1px solid #333;
       border-radius: 20px;
-      padding: 30px;
+      padding: 40px;
       width: 340px;
       position: sticky;
       top: 20px;
       height: fit-content;
     }
 
+    .sidebar-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
     .avatar-box {
-      background: linear-gradient(135deg, #ffdb70 0%, #ffa85c 100%);
+      width: 120px;
+      height: 120px;
       border-radius: 20px;
-      padding: 15px;
-      margin-bottom: 20px;
+      overflow: hidden;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
 
     .avatar-img {
       width: 100%;
-      border-radius: 15px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .info-content {
+      margin-bottom: 25px;
     }
 
     .name {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      color: #fff;
     }
 
     .title {
-      background: linear-gradient(to right, #ffdb70, #ffa85c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 14px;
+      background: #2b2b2c;
+      color: #fff;
+      font-size: 13px;
       font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 8px;
+      display: inline-block;
     }
 
     .info_more-btn {
-      background: #383838;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #ffdb70;
       border: none;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 12px;
+      color: #1e1e1f;
+      padding: 10px 20px;
+      border-radius: 10px;
       cursor: pointer;
-      width: 100%;
-      margin-top: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      font-family: 'Poppins', sans-serif;
+      gap: 8px;
       transition: 0.3s;
     }
 
     .info_more-btn:hover {
-      background: #444;
+      background: #ffa85c;
+      transform: translateY(-2px);
+    }
+
+    .info_more-btn span {
+      display: none;
+    }
+
+    .info_more-btn::before {
+      content: 'Show Contacts';
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .sidebar.active .info_more-btn::before {
+      content: 'Hide Contacts';
     }
 
     .sidebar-info_more {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.5s ease;
+      margin-top: 30px;
     }
 
     .sidebar.active .sidebar-info_more {
@@ -677,7 +715,7 @@
           <p class="title">Web developer</p>
         </div>
 
-        <button class="info_more-btn" onclick="document.getElementById('sidebar').classList.toggle('active')">
+        <button class="info_more-btn" data-sidebar-btn onclick="document.getElementById('sidebar').classList.toggle('active')">
           <span>Show Contacts</span>
           <ion-icon name="chevron-down"></ion-icon>
         </button>
