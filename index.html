@@ -570,11 +570,10 @@
     }
 
     textarea.form-input {
-      grid-column: 1 / -1;
-      min-height: 150px;
-      resize: vertical;
+    width: 100%;
+    min-height: 150px;
+    grid-column: 1 / -1; /* Span across all columns if in a grid */
     }
-
     .form-btn {
       background: linear-gradient(to right, #ffdb70, #ffa85c);
       border: none;
