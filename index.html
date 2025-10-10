@@ -1084,23 +1084,24 @@
           </figure>
         </section>
 
-        <section class="contact-form">
-          <h3 class="h3 form-title">Contact Form</h3>
+        
+<section class="contact-form">
+  <h3 class="form-title">Contact Form</h3>
 
-          <form class="form" id="contactForm">
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
-              <input type="email" name="email" class="form-input" placeholder="Email address" required>
-            </div>
+  <form class="form" id="contactForm">
+    <div class="input-wrapper">
+      <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
+      <input type="email" name="email" class="form-input" placeholder="Email address" required>
+    </div>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
+    <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
 
-            <button class="form-btn" type="submit">
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-          </form>
-        </section>
+    <button class="form-btn" type="submit">
+      <ion-icon name="paper-plane"></ion-icon>
+      <span>Send Message</span>
+    </button>
+  </form>
+</section>
       </article>
     </div>
   </main>
@@ -1175,24 +1176,24 @@
 
     // Form submission with better feedback
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn = this.querySelector('.form-btn');
-      const btnText = btn.querySelector('span');
-      const originalText = btnText.textContent;
-      
-      btn.disabled = true;
-      btnText.textContent = 'Sending...';
-      
-      // Simulate sending
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      btnText.textContent = 'Message Sent!';
-      setTimeout(() => {
-        btnText.textContent = originalText;
-        btn.disabled = false;
-        this.reset();
-      }, 2000);
-    });
+    e.preventDefault();
+    const btn = this.querySelector('.form-btn');
+    const btnText = btn.querySelector('span');
+    const originalText = btnText.textContent;
+    
+    btn.disabled = true;
+    btnText.textContent = 'Sending...';
+    
+    // Add your form submission logic here
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    btnText.textContent = 'Message Sent!';
+    setTimeout(() => {
+      btnText.textContent = originalText;
+      btn.disabled = false;
+      this.reset();
+    }, 2000);
+  });
 
     // Animated skill bars on scroll
     const observer = new IntersectionObserver((entries) => {
